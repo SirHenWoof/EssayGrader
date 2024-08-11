@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "spell-checker-js": "^1.2.6"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "essaygrader",
+  "description": "I will grade your essays using some parameters. To use, enter terminal and open the directory, then type in \"node server.js\" (without the quotations) and then enter your browser and open a new tab with the url \"http://localhost:2020/\" (again, without the quotes).",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "Screen.js",
+  "files": [
+    "./*"
+  ],
+  "keywords": [],
+  "author": "Henry Fradin",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.4.1"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="Screen.js"></script>
+<title>Essay Grader</title>
+<center>
+    <h1>Essay Grader</h1>
+    <h2>Coded by Henry Fradin</h2>
+    <h3>Keep your essay between 500 and 1000 words, and don't misspell words. However, if you do misspell words, I will only count the first time you misspell a word. Good Luck!</h3>
+<form id="myform" action="/Grade?ShowGrade" method="post">  
+    <input type="text" name="Name" placeholder='Name:'></textarea>
+    <br>
+    <textarea wrap="off" name="Essay" id="essay" autofocus placeholder='Enter your essay here!'></textarea>
+    <br>
+    <input type="submit" id="submit" value="Submit">  
+</form>  
+</center>
+<style>
+textarea {
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    padding: 0;
+}
+.Name {
+    width: 500px;
+    padding: 0;
+}
+</style>
