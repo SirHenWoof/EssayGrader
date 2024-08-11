@@ -1,4 +1,3 @@
-import { executeEssayPost } from './Mongo/crudFunctions.js';
 import cookieParser from 'cookie-parser';
 var reasons = [];
 async function gradeEssay(ess) {
@@ -7,11 +6,11 @@ async function gradeEssay(ess) {
     const SEssay = ess.toString();
 
     //Essay Length Requirment
-    if (SEssay.split(" ").length <= 500) {
+    if (SEssay.split(" ").length < 495) {
         initialGrade -= 50;
         reasons.push("-50%, too short<br>");
     } else {
-        if (SEssay.split(" ").length > 1000) {
+        if (SEssay.split(" ").length > 995) {
             initialGrade -= 50;
             reasons.push("-50%, too long<br>");
         } 
@@ -58,9 +57,6 @@ const port = process.env.PORT || 2020
             var grade = FGrade;
             res.cookie("Again", "false");
             res.send("<title>Grade</title><center><h1>Thanks for submitting an essay, " + name + "! Your Grade is " + grade + "%</h1><br><h2>Here are the reasons for your grade:<br>"+ reasons +"</h2></center>");
-            //MongoDB Grade
-            //Creates the essayPost
-            await executeEssayPost(name, grade);
         } else {
             res.redirect("/")
         }
